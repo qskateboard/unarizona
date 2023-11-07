@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Unofficial forum API{% endblock %}
+
+{% block content %}
+<div class="content">
+  <div class="container-fluid">
+    <div class="row h-100 d-flex justify-content-center align-items-center" style="margin-top: 5%">
+        <div class="col-md-6">
+            <div class="card text-center">
+              <div class="card-header">
+              </div>
+              <div class="card-body">
+                <img class="rounded mx-auto d-block" src="/static/logo.png">
+                <br>
+                <h4 class="card-title">Неофициальное API для форума Arizona RP</h4>
+                <p class="card-text">
+                    Полный доступ к форуму с помощью нашего API по стандартам OpenAPI
+                    <br>
+                    Обход защиты ReactJS, авторизация и выполнение любых запросов - всё включено!
+                </p>
+                <a href="/dashboard" class="btn btn-primary">Войти</a>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

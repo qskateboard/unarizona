@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}Панель управления{% endblock %}
+
+{% block content %}
+<div class="content">
+  <div class="container-fluid">
+      <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="/" class="simple-text logo-normal">
+          unarizona api
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item  ">
+            <a class="nav-link" href="./dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Главная</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./user">
+              <i class="material-icons">person</i>
+              <p>Профиль</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="./paid">
+                  <i class="material-icons">unarchive</i>
+                  <p>Подписки</p>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="./docs">
+                  <i class="material-icons">book</i>
+                  <p>Документация</p>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">unarizona api</h4>
+                  <p class="card-category">Отправляешь запросов больше своего лимита? Выбери наиболее удобный для себя план!</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive table-upgrade">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th class="text-center">Free</th>
+                          <th class="text-center">VIP</th>
+                          <th class="text-center">Premium</th>
+                          <th class="text-center">PRO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Лимит запросов в сутки</td>
+                          <td class="text-center">10</td>
+                          <td class="text-center">500</td>
+                          <td class="text-center">5000</td>
+                          <td class="text-center">∞</td>
+                        </tr>
+                        <tr>
+                          <td>Приоритет скорости API</td>
+                          <td class="text-center">Стандартный</td>
+                          <td class="text-center">Стандартный</td>
+                          <td class="text-center">Повышенный</td>
+                          <td class="text-center">Повышенный</td>
+                        </tr>
+                        <tr>
+                          <td>Premium Поддержка</td>
+                          <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                          <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                          <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                          <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                          <td>Приоритет добавления ваших функций</td>
+                          <td class="text-center"><i class="fa fa-times text-danger"></i></td>
+                          <td class="text-center"><i class="fa fa-check text-danger"></i></td>
+                          <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                          <td class="text-center"><i class="fa fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td class="text-center">Бесплатно</td>
+                          <td class="text-center">90 рублей в месяц</td>
+                          <td class="text-center">190 рублей в месяц</td>
+                          <td class="text-center">690 рублей в месяц</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center"></td>
+                          <td class="text-center">
+                            <a href="#" class="btn btn-round btn-fill btn-default disabled">Текущая версия</a>
+                          </td>
+                          <td class="text-center">
+                            <a target="_blank" href="https://vk.com/p0krovskaya" class="btn btn-round btn-fill btn-info">Обновить до VIP</a>
+                          </td>
+                            <td class="text-center">
+                            <a target="_blank" href="https://vk.com/p0krovskaya" class="btn btn-round btn-fill btn-info">Обновить до Premium</a>
+                          </td>
+                            </td>
+                            <td class="text-center">
+                            <a target="_blank" href="https://vk.com/p0krovskaya" class="btn btn-round btn-fill btn-info">Обновить до PRO</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="/dashboard">
+                  Главная
+                </a>
+              </li>
+              <li>
+                <a href="/docs">
+                  Документация
+                </a>
+              </li>
+              <li>
+                <a href="/paid">
+                  Подписки
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/p0krovskaya">
+                  Поддержка
+                </a>
+              </li>
+              <li>
+                <a href="/logout">
+                  Выход
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right" id="date">
+            ,  <i class="material-icons">favorite</i> by
+            <a href="/" target="_blank">unarizona api</a> для полной автоматизации.
+          </div>
+        </div>
+      </footer>
+      <script>
+        const x = new Date().getFullYear();
+        let date = document.getElementById('date');
+        date.innerHTML = '&copy; ' + x + date.innerHTML;
+      </script>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

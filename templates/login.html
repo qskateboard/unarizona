@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+<div class="content">
+        <div class="container-fluid">
+          <div class="row h-100 d-flex justify-content-center align-items-center"  style="margin-top: 5%">
+            <div class="col-md-5">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Авторизация</h4>
+                  <p class="card-category">Введите данные от своего аккаунта ниже</p>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/auth/login">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-11">
+                                <div class="form-group bmd-form-group">
+                                  <label class="bmd-label-floating">Логин</label>
+                                  <input type="text" name="username" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-11">
+                                <div class="form-group bmd-form-group">
+                                  <label class="bmd-label-floating">Пароль</label>
+                                  <input type="password" name="password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a type="submit" href="/register" class="btn btn-info pull-left">Нет аккаунта?<div class="ripple-container"></div></a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary pull-right">Войти<div class="ripple-container"></div></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}

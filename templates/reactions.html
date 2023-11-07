@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Full X Full | unarizona{% endblock %}
+
+{% block content %}
+<style>
+    .username--style72 {
+        text-shadow: #ffa500 1px 1px 10px;
+        color: orange;
+    }
+
+    .username {
+        color: #c0c9d8;
+        text-decoration: none;
+    }
+
+    .wanna {
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+<div class="content">
+    <div class="h-100 d-flex align-items-center" align="center">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-center" style="margin-top: 2%">
+                <div class="col-md-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                             src="https://sun9-21.userapi.com/impg/yWeiR_X3Z1hm_zkCjYot3ptJe_-cLdoNc_w6-g/8Vip7VZIrac.jpg?size=1080x1080&quality=95&sign=2e051d7d0aaa9089e866af481882c917&type=album"
+                             alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="username--style72">Lee Dohyeon</span></h5>
+                            <p class="card-text">Реакции: 7.777</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                             src="https://www.meme-arsenal.com/memes/15ef8d1ccbb4514e0a758c61e1623b2f.jpg"
+                             alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="username">Твой ник</span></h5>
+                            <p class="card-text">Реакции: ∞</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7" style="margin-top: 2%">
+                    <div class="card">
+                        <div class="card-header card-header-text card-header-primary">
+                            <div class="card-text">
+                                <h4 class="wanna">Хочешь много реакций?</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            Выбери режим установки реакций
+
+                            <ul class="nav nav-pills nav-pills-icons align-items-center justify-content-center"
+                                role="tablist">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#automatic" role="tab" data-toggle="tab"
+                                       style="width: 150px">
+                                        <i class="material-icons">dashboard</i>
+                                        Авто
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#manual" role="tab" data-toggle="tab"
+                                       style="width: 150px">
+                                        <i class="material-icons">schedule</i>
+                                        Ручной
+                                    </a>
+                                </li>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="automatic" align="left">
+                                        <p>В этом способе вам необходимо указать логин и пароль от вашего форумного
+                                            аккаунта. Важно, чтобы не было двухфакторной авторизации. Так как я
+                                            администратор на Arizona Role Play, я гарантирую, что с вашими данными
+                                            ничего не будет. Весь процесс пройдет полностью автоматически.</p>
+
+                                        <br>
+                                        <div class="form-group md-form-group">
+                                            <label class="md-label-static">Логин</label>
+                                            <input type="text" autocomplete="off" class="form-control" id="login"
+                                                   placeholder="Lee Dohyeon" required>
+                                        </div>
+                                        <div class="form-group md-form-group">
+                                            <label class="md-label-static">Пароль</label>
+                                            <input type="password" autocomplete="off" class="form-control" id="password"
+                                                   placeholder="**********" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" id="start">Начать
+                                        </button>
+                                    </div>
+                                    <div class="tab-pane" id="manual" align="left">
+                                        <p>В этом способе у вас ниже появляется окно, где вам надо самому ставить лайк.
+                                            Сайт это видит и меняет каждый раз сообщение, сразу устанавливая вам новую
+                                            реакцию.
+                                            <br>
+                                            Сначала ставим реакцию по первой кнопке и закрываем окно. После чего
+                                            нажимаем кнопку "Проверить" и начинаем по новой.
+                                        </p>
+
+                                        <br>
+                                        <div class="form-group md-form-group">
+                                            <label class="md-label-static">Ваш ID форумного аккаунта 
+                                                (https://forum.arizona-rp.com/members/<b>1005690</b>/)</label>
+                                            <input type="number" id="fid" class="form-control" placeholder="1005690"
+                                                   required>
+                                        </div>
+                                        <div id="form">
+                                            <input type="hidden" id="url"
+                                                   value="https://forum.arizona-rp.com/profile-posts/comments/1781531/">
+                                            <button type="submit" class="btn btn-primary"
+                                                    onclick="window.open($('input#url').val() + 'react?reaction_id=2', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes').focus();">
+                                                Поставить реакцию
+                                            </button>
+                                            <button class="btn btn-warning" id="check">
+                                                Проверить
+                                            </button>
+                                            <button class="btn btn-secondary" id="skip">
+                                                Пропустить
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+    $("button#start").click(function () {
+        $.notify("Процесс начат, не закрывайте вкладку. Это может продлиться до нескольких минут!");
+        $("#start").fadeOut();
+        $.get("/reactions/auto",
+            {
+                username: $("input#login").val(),
+                password: $("input#password").val()
+            },
+            function (data, status) {
+                $("#start").fadeIn();
+                $.notify(data);
+            });
+
+    });
+
+    $("button#check").click(function () {
+        $("#form").fadeOut();
+        $.get("/reactions/manual",
+            {
+                url: $("input#url").val(),
+                fid: $("input#fid").val()
+            },
+            function (data, status) {
+                $("#form").fadeIn();
+                if (data === "false") {
+                    $.notify("Реакция не была установлена или произошла ошибка сервера");
+                } else if (data === "not_found") {
+                    $.notify("Задачи для вашего форумного аккаунта закончились");
+                } else {
+                    $.notify('Реакция успешно прошла проверку');
+                    $("input#url").val(data);
+                }
+            });
+    });
+
+    $("button#skip").click(function () {
+        $("#form").fadeOut();
+        $.get("/reactions/manual",
+            {
+                url: $("input#url").val(),
+                fid: $("input#fid").val(),
+                skip: "1",
+            },
+            function (data, status) {
+                $("#form").fadeIn();
+                if (data === "false") {
+                    $.notify("Реакция не была установлена или произошла ошибка сервера");
+                } else if (data === "not_found") {
+                    $.notify("Задачи для вашего форумного аккаунта закончились");
+                } else {
+                    $.notify('Реакция успешно прошла проверку');
+                    $("input#url").val(data);
+                }
+            });
+    });
+</script>
+{% endblock %}

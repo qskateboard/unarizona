@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}Панель управления{% endblock %}
+
+{% block content %}
+<div class="content">
+  <div class="container-fluid">
+      <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="/" class="simple-text logo-normal">
+          unarizona api
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="./dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Главная</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./user">
+              <i class="material-icons">person</i>
+              <p>Профиль</p>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="./paid">
+                  <i class="material-icons">unarchive</i>
+                  <p>Подписки</p>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="./docs">
+                  <i class="material-icons">book</i>
+                  <p>Документация</p>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div>
+                  <p class="card-category">Использовано запросов</p>
+                  <h3 class="card-title">{{ logs|length }}/{{ user.daily_limit }}
+                    <small>шт</small>
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons text-warning">warning</i>
+                    <a href="/paid" class="warning-link">Увеличить количество запросов...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">build</i>
+                  </div>
+                  <p class="card-category">API ключ</p>
+                  <h3 class="card-title">{{ user.api_key }}</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">backup</i> Храните его надежно
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Последние обращения к API</h4>
+                  <p class="card-category">Краткая сводка последних запросов</p>
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-warning">
+                      <th>ID</th>
+                      <th>Метод</th>
+                      <th>Код ответа</th>
+                      <th>Дата</th>
+                    </thead>
+                    <tbody>
+                      {% for log in all_logs %}
+                      <tr>
+                        <td>{{log.id}}</td>
+                        <td>{{log.method}}</td>
+                        <td>{{log.code}}</td>
+                        <td>{{log.date}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="/dashboard">
+                  Главная
+                </a>
+              </li>
+              <li>
+                <a href="/docs">
+                  Документация
+                </a>
+              </li>
+              <li>
+                <a href="/paid">
+                  Подписки
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/p0krovskaya">
+                  Поддержка
+                </a>
+              </li>
+              <li>
+                <a href="/logout">
+                  Выход
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right" id="date">
+            ,  <i class="material-icons">favorite</i> by
+            <a href="/" target="_blank">unarizona api</a> для полной автоматизации.
+          </div>
+        </div>
+      </footer>
+      <script>
+        const x = new Date().getFullYear();
+        let date = document.getElementById('date');
+        date.innerHTML = '&copy; ' + x + date.innerHTML;
+      </script>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
